@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// importo il controller
+use App\Http\Controllers\ComicController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  return view('home');
-});
+Route::get("/", function(){
+    return view("home");
+})->name("home");
+
+// metodo resource per generare le rotte
+Route::resource("comics", ComicController::class);
