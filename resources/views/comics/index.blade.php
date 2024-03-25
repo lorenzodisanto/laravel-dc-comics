@@ -5,7 +5,11 @@
 
 @section('main-content') 
     <div class="container py-4">
-      <div class="row g-4">
+      {{-- link form --}}
+      <a href="{{ route('comics.create') }}" role="button" class="btn btn-primary">Inserisci Comic</a>
+
+      {{-- lista comic --}}
+      <div class="row g-4 mt-2">
         @foreach($comics as $comic)
         <div class="col-2">
            <div class="card h-100">
