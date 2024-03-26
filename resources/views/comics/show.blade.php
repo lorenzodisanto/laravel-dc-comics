@@ -12,22 +12,22 @@
       <a href="{{ route('comics.edit', $comic)}}" class="btn btn-warning"> Modifica </a>     
       
       {{-- dettaglio fumetto --}}
-      <div class="d-flex mt-4">
-        <div>
-          <img src="{{ $comic['thumb']}}" alt="">
+      <h2 class="my-3">{{ $comic->series }}</h2>
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ $comic['thumb']}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ $comic->title }}</h5>
+              <p class="card-text">{{ $comic->description }}</p>
+              <p class="card-text"><small class="text-body-secondary"><b>Prezzo: </b> {{ $comic->price }}</small></p>
+              <p class="card-text"><small class="text-body-secondary"><b>Data di uscita: </b> {{ $comic->sale_date }}</small></p>
+              <p class="card-text"><small class="text-body-secondary"><b>Genere: </b> {{ $comic->type }}</small></p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h2 class="mx-4">{{ $comic->series }}</h2>
-          <ul>
-            <li><b>Nome: </b> {{ $comic->title }}</li>
-            <li><b>Descrizione: </b> {{ $comic->description }}</li>
-            <li><b>Prezzo: </b> {{ $comic->price }}</li>
-            <li><b>Data di uscita: </b> {{ $comic->sale_date }}</li>
-            <li><b>Genere: </b> {{ $comic->type }}</li>
-          </ul>
-        </div>
-        
-      </div>   
-      
+      </div> 
     </div> 
 @endsection
