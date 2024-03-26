@@ -10,10 +10,12 @@
     }
 }
 
-.card {
-    img {
-        width: 100%;
+img {
+    width: 100%;
+
+    &.thumb-list {
         aspect-ratio: 1 / 1;
         object-fit: cover;
+        object-position: top;
     }
 }
