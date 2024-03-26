@@ -5,7 +5,13 @@
 
 @section('main-content') 
     <div class="container py-4">
-      <a href="{{ route('comics.index')}}" class="btn btn-primary"> Torna indietro </a>     
+      {{-- pulsante ritorna alla lista fumetti --}}
+      <a href="{{ route('comics.index')}}" class="btn btn-primary"> Torna alla lista </a>  
+      
+      {{-- pulsante modifica fumetto --}}
+      <a href="{{ route('comics.edit', $comic)}}" class="btn btn-warning"> Modifica </a>     
+      
+      {{-- dettaglio fumetto --}}
       <div class="d-flex mt-4">
         <div>
           <img src="{{ $comic['thumb']}}" alt="">

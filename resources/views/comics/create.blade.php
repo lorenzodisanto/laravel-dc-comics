@@ -5,6 +5,13 @@
 
 @section('main-content') 
     <div class="container py-4">
+
+        {{-- pulsante torna alla lista fumetti --}}
+      <a href="{{ route('comics.index')}}" class="btn btn-primary"> Torna alla lista </a>
+
+      <h2 class="mt-3">Inserisci fumetto</h2>
+        
+      {{-- form inserisci nuovo fumetto --}}
       <form action="{{ route('comics.store') }}" method="POST">
         @csrf
     
@@ -34,7 +41,7 @@
             rows="5"
         ></textarea>
            
-        <button type="submit" class="btn btn-primary mt-3">Salva</button>
-    </form>
+        <button type="submit" class="btn btn-success mt-3">Salva</button>
+       </form>
     </div> 
 @endsection
