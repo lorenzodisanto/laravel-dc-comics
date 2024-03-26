@@ -18,10 +18,19 @@
                 <h5 class="card-title">{{ $comic['series']}}</h5>
 
                 {{-- pulsante dettaglio fumetto --}}
-                <a href="{{ route('comics.show', $comic) }}" class="btn btn-info">Info</a>
+                <a href="{{ route('comics.show', $comic) }}" class="btn btn-info btn-sm">Info</a>
 
                 {{-- pulsante modifica fumetto --}}
-                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">Modifica</a>
+                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning btn-sm">Modifica</a>
+                
+                {{-- form con pulsante elimina fumetto --}}
+                <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="d-inline">
+                  @csrf
+                  {{-- metodo --}}
+                  @method("DELETE")
+
+                  <button class="btn btn-danger btn-sm">Elimina</button>
+                </form>
               </div>
            </div>
          </div>
